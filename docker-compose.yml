@@ -1,0 +1,12 @@
+newrelic:
+  build: .
+  restart: "on-failure"
+  privileged: true
+  volumes:
+    - "/var/run/docker.sock:/var/run/docker.sock"
+    - "/dev:/dev"
+    - "/sys:/sys"
+  env_file:
+    - newrelic.env
+  pid: host
+  net: host
