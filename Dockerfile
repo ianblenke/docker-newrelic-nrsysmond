@@ -11,4 +11,6 @@ RUN apt-get update -q && apt-get install -yq ca-certificates wget procps && \
     apt-get clean
 
 ADD run.sh /
+RUN chmod 755 /run.sh
+
 CMD ["/run.sh"]
